@@ -10,10 +10,7 @@
 
 	let { children }: LayoutProps = $props();
 
-	const nav = [
-		{ href: '/projects', label: 'Projects' },
-		{ href: '/blog', label: 'Blog' }
-	] as const;
+	const nav = [{ href: '/projects', label: 'Projects' }] as const;
 
 	const isActive = (href: string) =>
 		page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
