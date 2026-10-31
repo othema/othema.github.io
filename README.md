@@ -24,17 +24,15 @@ The site uses `@sveltejs/adapter-static` and prerenders every route, so the cont
 src/
 ├── app.css                  # Global styles, colour tokens, typography
 ├── lib/
-│   ├── config.ts            # Name, description, GitHub and LinkedIn links
+│   ├── config.ts            # Name, description, social links and CV
 │   ├── components/          # Meta tags and social icons
 │   └── data/projects.ts     # Projects shown on /projects
 └── routes/
     ├── +layout.svelte       # Header, nav, footer
     ├── +page.svelte         # Home
-    ├── projects/+page.svelte
-    └── blog/+page.svelte
+    └── projects/+page.svelte
 ```
 
 ## TODO
 
 - Edit, reorder or add projects in `src/lib/data/projects.ts`.
-- Blog content and post routing are intentionally not implemented yet — see the comment in `src/routes/blog/+page.svelte`.
