@@ -18,6 +18,8 @@
 	const isActive = (href: string) =>
 		page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
 
+	const currentSection = $derived(nav.find((item) => isActive(item.href))?.label);
+
 	const year = new Date().getFullYear();
 </script>
 
@@ -27,7 +29,12 @@
 
 <div class="shell">
 	<header class="site-header">
-		<a class="wordmark" href={resolve('/')}>{site.name}</a>
+		<div class="brand">
+			<a class="wordmark" href={resolve('/')}>{site.name}</a>
+			{#if currentSection}
+				<span class="section" aria-hidden="true">/{currentSection}</span>
+			{/if}
+		</div>
 
 		<nav aria-label="Primary">
 			{#each nav as item (item.href)}
@@ -71,10 +78,25 @@
 		padding-block: 2rem;
 	}
 
+	.brand {
+		display: flex;
+		align-items: baseline;
+		gap: 0.4375rem;
+	}
+
 	.wordmark {
 		font-size: 0.9375rem;
 		font-weight: 500;
 		letter-spacing: -0.015em;
+	}
+
+	.section {
+		font-family:
+			ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+			monospace;
+		font-size: 0.9375rem;
+		font-weight: 500;
+		color: var(--muted);
 	}
 
 	nav {
