@@ -25,14 +25,22 @@
 	<ul class="projects">
 		{#each projects as project (project.name)}
 			<li>
-				<a href={project.href} target="_blank" rel="external noreferrer">
+				<svelte:element
+					this={project.href ? 'a' : 'div'}
+					href={project.href}
+					target={project.href ? '_blank' : undefined}
+					rel={project.href ? 'external noreferrer' : undefined}
+					class="project"
+				>
 					<span class="project-heading">
 						<span class="project-name">{project.name}</span>
-						<span class="project-arrow" aria-hidden="true">↗</span>
+						{#if project.href}
+							<span class="project-arrow" aria-hidden="true">↗</span>
+						{/if}
 					</span>
 					<span class="project-description">{project.description}</span>
 					<span class="project-language">{project.language}</span>
-				</a>
+				</svelte:element>
 			</li>
 		{/each}
 	</ul>
@@ -67,7 +75,7 @@
 		border-bottom: 1px solid var(--border);
 	}
 
-	.projects a {
+	.project {
 		display: grid;
 		grid-template-columns: 1fr auto;
 		grid-template-areas:
@@ -125,7 +133,7 @@
 	}
 
 	@media (max-width: 30rem) {
-		.projects a {
+		.project {
 			grid-template-columns: 1fr;
 			grid-template-areas:
 				'heading'
