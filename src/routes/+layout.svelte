@@ -12,8 +12,10 @@
 
 	const nav = [{ href: '/projects', label: 'Projects' }] as const;
 
-	const isActive = (href: string) =>
-		page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
+	const isActive = (href: string) => {
+		const route = page.route.id;
+		return route === href || Boolean(route?.startsWith(`${href}/`));
+	};
 
 	const currentSection = $derived(nav.find((item) => isActive(item.href))?.label);
 
