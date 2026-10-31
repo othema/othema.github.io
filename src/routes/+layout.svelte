@@ -2,7 +2,7 @@
 	import '@fontsource-variable/inter';
 	import '../app.css';
 	import { page } from '$app/state';
-	import { resolve } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import favicon from '../lib/assets/favicon.svg';
 	import SocialLinks from '../lib/components/SocialLinks.svelte';
 	import { site } from '../lib/config';
@@ -46,6 +46,7 @@
 					{item.label}
 				</a>
 			{/each}
+			<a href={asset(site.cv)} target="_blank" rel="noopener" aria-label="View CV (PDF)">CV</a>
 		</nav>
 	</header>
 
@@ -55,7 +56,10 @@
 
 	<footer class="site-footer">
 		<SocialLinks />
-		<p>© {year} {site.name}</p>
+		<div class="footer-meta">
+			<a href={asset(site.cv)} target="_blank" rel="noopener" aria-label="View CV (PDF)">CV</a>
+			<p>© {year} {site.name}</p>
+		</div>
 	</footer>
 </div>
 
@@ -136,6 +140,20 @@
 		border-top: 1px solid var(--border);
 		font-size: 0.8125rem;
 		color: var(--muted);
+	}
+
+	.footer-meta {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.footer-meta a {
+		transition: color 150ms ease;
+	}
+
+	.footer-meta a:hover {
+		color: var(--foreground);
 	}
 
 	@media (max-width: 30rem) {
