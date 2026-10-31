@@ -18,6 +18,12 @@ npm run preview
 
 The site uses `@sveltejs/adapter-static` and prerenders every route, so the contents of `build/` can be deployed to any static host.
 
+## Deployment
+
+Pushes to `main` are built and published to GitHub Pages by `.github/workflows/deploy.yml`.
+
+The site is served from the root of `https://othema.github.io/`, so no base path is configured. Pages must be set to **Source: GitHub Actions** in the repository settings.
+
 ## Structure
 
 ```
