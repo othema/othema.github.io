@@ -11,39 +11,31 @@ export interface Project {
  */
 export const projects: Project[] = [
 	{
-		name: 'c-chess',
-		description: 'A chess engine and full app made in C.',
-		language: 'C',
-		href: 'https://github.com/othema/c-chess'
-	},
-	{
-		name: 'command-ai',
-		description: 'A GitHub Copilot-style assistant for the command line.',
-		language: 'Python',
-		href: 'https://github.com/othema/command-ai'
-	},
-	{
-		name: 'creature-walking-py',
-		description: 'A reinforcement learning creature walking simulation.',
-		language: 'Python',
+		name: 'Reinforcement Learning Creature Walking Simulation',
+		description:
+			'A custom neural network that maps joint positions and velocities to muscle actions, trained to walk in a 2D rigid-body physics environment. Built with TensorFlow, Pygame and Pymunk.',
+		language: 'Python, TensorFlow',
 		href: 'https://github.com/othema/creature-walking-py'
 	},
 	{
-		name: 'tunemix',
-		description: 'A music playlist generator.',
-		language: 'TypeScript',
-		href: 'https://github.com/othema/tunemix'
+		name: 'AI/Multiplayer Chess Game',
+		description:
+			'A chess engine in C with local multiplayer and an AI opponent, powered by Stockfish over the UCI protocol. The interface is built with SDL2 and microui.',
+		language: 'C, Stockfish',
+		href: 'https://github.com/othema/c-chess'
 	},
 	{
-		name: 'termaudio',
-		description: 'A simple YouTube audio player for the Linux terminal.',
-		language: 'Python',
-		href: 'https://github.com/othema/termaudio'
+		name: 'Abehub',
+		description:
+			'A school-wide social network with authentication, posts, likes and follows. Built with Flask and SQLite, it onboarded 250+ real users.',
+		language: 'Python, Flask',
+		// Public repo is the later Abehub revival; the original Flask code is not public.
+		href: 'https://github.com/othema/abehub2'
 	},
 	{
-		name: 'tamburini',
-		description: 'A website for Alex Tamburini.',
-		language: 'Svelte',
-		href: 'https://github.com/othema/tamburini'
+		name: 'Hawk-Dove Simulation',
+		description:
+			'An evolutionary game theory simulation of hawk-dove dynamics, visualised with Matplotlib to show stable strategies and population changes over 1000+ generations.',
+		language: 'Python, Matplotlib'
 	}
 ];
