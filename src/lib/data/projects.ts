@@ -36,6 +36,7 @@ export const projects: Project[] = [
 		name: 'Hawk-Dove Simulation',
 		description:
 			'An evolutionary game theory simulation of hawk-dove dynamics, visualised with Matplotlib to show stable strategies and population changes over 1000+ generations.',
-		language: 'Python, Matplotlib'
+		language: 'Python, Matplotlib',
+		href: 'https://github.com/othema/hawk-dove-ess'
 	}
 ];
